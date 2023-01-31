@@ -5,13 +5,16 @@ main () => runApp(const PerguntaApp());
 class PerguntaApp extends StatelessWidget{
   const PerguntaApp({super.key});
 
+  void responder() {
+    print("Respondida");
+  }
+
   @override
   Widget build(BuildContext context) {
     final List<String> perguntas = [
       'Qual é sua cor favorita?',
       'Qual é o seu animal favorita?',
     ];
-
 
     return MaterialApp(
       home: Scaffold(
@@ -22,16 +25,16 @@ class PerguntaApp extends StatelessWidget{
           children: <Widget> [
             Text(perguntas[0]),
             TextButton(
-              onPressed: null,
-              child: Text('Resposta 1')
+              onPressed: responder,
+              child: const Text('Resposta 1')
             ),
             TextButton(
-              onPressed: null,
-              child: Text('Resposta 2')
+              onPressed: responder,
+              child: const Text('Resposta 2')
             ),
             TextButton(
-              onPressed: null,
-              child: Text('Resposta 3')
+              onPressed: responder,
+              child: const Text('Resposta 3')
             )
           ]
         )
